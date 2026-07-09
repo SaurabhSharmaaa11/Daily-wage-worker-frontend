@@ -1,0 +1,102 @@
+:root {
+  /* ---- Palette: matched from the real Dihadi screenshot ---- */
+  --charcoal: #171310;      /* warm near-black - dark sections, headings, footer */
+  --charcoal-dark: #0D0B08; /* deeper shade for gradients/hover */
+  --safety: #F0A237;        /* golden amber - primary accent/CTA */
+  --safety-dark: #D88E22;
+  --rust: #C1502E;          /* brick/rust - secondary accent, warnings */
+  --concrete: #F7EFE0;      /* warm cream/parchment - page background */
+  --concrete-dark: #EBDFC7; /* card borders/dividers on cream bg */
+  --ink: #1C1810;           /* warm near-black - body text */
+  --ink-soft: #6E6860;      /* secondary/muted text */
+  --white: #FFFFFF;
+
+  --font-display: "Inter", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--concrete);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--concrete);
+  color: var(--ink);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--charcoal);
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--safety);
+  color: var(--charcoal);
+  border: none;
+  padding: 14px 28px;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 999px;
+  transition: background 0.15s ease, transform 0.1s ease;
+  display: inline-block;
+}
+
+.btn-primary:hover {
+  background: var(--safety-dark);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--charcoal);
+  border: 2px solid var(--charcoal);
+  padding: 12px 26px;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 999px;
+  transition: background 0.15s ease, color 0.15s ease;
+  display: inline-block;
+}
+
+.btn-secondary:hover {
+  background: var(--charcoal);
+  color: var(--white);
+}
+
+/* For use on dark backgrounds (hero, footer) where .btn-secondary would be invisible */
+.btn-outline-light {
+  background: transparent;
+  color: var(--white);
+  border: 2px solid rgba(255,255,255,0.4);
+  padding: 12px 26px;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 999px;
+  transition: background 0.15s ease, border-color 0.15s ease;
+  display: inline-block;
+}
+
+.btn-outline-light:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: var(--white);
+}

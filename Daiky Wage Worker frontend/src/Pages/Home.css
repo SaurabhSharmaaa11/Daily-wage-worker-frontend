@@ -1,0 +1,343 @@
+/* ===================================================
+   HOME PAGE — "the site signboard"
+   Signature element: a live ledger strip styled like a
+   chalked tally board, showing real registered-worker
+   and today's-attendance counts pulled from the API.
+   =================================================== */
+
+.hero {
+  background: var(--concrete);
+  color: var(--ink);
+  padding: 70px 40px 60px;
+  text-align: center;
+}
+
+.hero-eyebrow {
+  display: inline-block;
+  font-family: var(--font-mono);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  color: var(--ink-soft);
+  background: var(--white);
+  border: 1px solid var(--concrete-dark);
+  padding: 7px 16px;
+  border-radius: 999px;
+  margin-bottom: 24px;
+}
+
+.hero h1 {
+  color: var(--charcoal);
+  font-weight: 900;
+  font-size: clamp(2.6rem, 6vw, 4.5rem);
+  line-height: 1.05;
+  max-width: 850px;
+  margin: 0 auto 20px;
+}
+
+.hero h1 span {
+  color: var(--safety);
+}
+
+.hero p.sub {
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  color: var(--ink-soft);
+  max-width: 560px;
+  margin: 0 auto 34px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ---- Ledger strip: the signature element ---- */
+
+.ledger {
+  max-width: 1000px;
+  margin: -46px auto 60px;
+  background: var(--white);
+  border: 1px solid var(--concrete-dark);
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(27, 27, 27, 0.15);
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
+}
+
+.ledger-cell {
+  flex: 1 1 200px;
+  padding: 26px 20px;
+  text-align: center;
+  border-right: 1px dashed var(--concrete-dark);
+}
+
+.ledger-cell:last-child {
+  border-right: none;
+}
+
+.ledger-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 8px;
+}
+
+.ledger-value {
+  font-family: var(--font-mono);
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: var(--charcoal);
+}
+
+.ledger-value.pending {
+  color: var(--rust);
+}
+
+/* ---- Problem section — this is the DARK block, matching the real site ---- */
+
+.problem-section {
+  background: linear-gradient(180deg, var(--charcoal) 0%, var(--charcoal-dark) 100%);
+  max-width: none;
+  padding: 70px 40px;
+}
+
+.problem-section .section-heading,
+.problem-section .problem-grid {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.problem-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.problem-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 16px;
+  padding: 26px 22px;
+  text-align: center;
+}
+
+.problem-icon {
+  font-size: 1.8rem;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.problem-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  color: var(--white);
+}
+
+.problem-card p {
+  font-family: var(--font-body);
+  color: #C9C4B8;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.problem-eyebrow {
+  color: var(--safety) !important;
+}
+
+.problem-heading {
+  color: var(--white) !important;
+}
+
+/* ---- Section shell ---- */
+
+.section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 40px;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 44px;
+}
+
+.section-heading .eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--rust);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.section-heading h2 {
+  font-size: 2rem;
+}
+
+/* ---- Toolbelt feature grid ---- */
+
+.toolbelt {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.tool-card {
+  background: var(--white);
+  border: 1px solid var(--concrete-dark);
+  border-top: 4px solid var(--safety);
+  border-radius: 16px;
+  padding: 26px 22px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.tool-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(27, 27, 27, 0.12);
+}
+
+.tool-card .tool-icon {
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.tool-card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+}
+
+.tool-card p {
+  font-family: var(--font-body);
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.tool-card a {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--charcoal);
+  border-bottom: 2px solid var(--safety);
+}
+
+/* ---- Two-column journey (real steps, so numbering is honest) ---- */
+
+.journeys {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.journey {
+  background: var(--concrete);
+  border: 1px solid var(--concrete-dark);
+  border-radius: 16px;
+  padding: 30px;
+}
+
+.journey h3 {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.journey ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: step;
+}
+
+.journey li {
+  counter-increment: step;
+  display: flex;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px dashed var(--concrete-dark);
+  font-family: var(--font-body);
+  color: var(--ink);
+}
+
+.journey li:last-child {
+  border-bottom: none;
+}
+
+.journey li::before {
+  content: counter(step);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--white);
+  background: var(--charcoal);
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+}
+
+/* ---- Footer CTA ---- */
+
+.home-cta {
+  background: var(--safety);
+  color: var(--charcoal);
+  text-align: center;
+  padding: 60px 40px;
+  margin-top: 0;
+}
+
+.home-cta h2 {
+  color: var(--charcoal);
+  margin-bottom: 16px;
+}
+
+.home-cta p {
+  color: #4A3A1C;
+  font-family: var(--font-body);
+  margin-bottom: 26px;
+}
+
+.home-cta .btn-primary {
+  background: var(--charcoal);
+  color: var(--white);
+}
+
+.home-cta .btn-primary:hover {
+  background: var(--charcoal-dark);
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 60px 20px 50px;
+  }
+
+  .ledger {
+    margin: -30px 16px 50px;
+  }
+
+  .ledger-cell {
+    flex: 1 1 45%;
+    border-right: none;
+    border-bottom: 1px dashed var(--concrete-dark);
+  }
+
+  .section {
+    padding: 40px 20px;
+  }
+}
