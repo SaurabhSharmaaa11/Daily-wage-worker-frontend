@@ -10,7 +10,7 @@ import WorkerProfile from "./components/WorkerProfile";
 
 import AddWorker from "./Pages/AddWorker";
 import EditWorker from "./Pages/EditWorker";
-import Booking from "./Pages/Booking";
+import Booking from "./Pages/booking";
 import Login from "./Pages/Login";
 import Attendance from "./components/Attendance";
 import WageCalculation from "./components/Wagecalculation";
