@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-    baseURL: "https://daily-wage-worker-backend.onrender.com"
+    baseURL: "https://daily-wage-worker-backend.onrender.com/"
 });
 
 // This runs before EVERY request sent through API.
